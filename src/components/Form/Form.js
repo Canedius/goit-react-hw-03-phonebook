@@ -3,14 +3,18 @@ import { nanoid } from 'nanoid';
 import s from './Form.module.css';
 import React from 'react';
 export class Form extends React.Component {
+  static defaultProps = {
+    onSubmit: PropTypes.func.isRequired,
+  };
+
   state = {
     name: '',
-    id: nanoid(),
+    id: '',
     number: '',
   };
 
   handelNameChange = e => {
-    this.setState({ name: e.currentTarget.value });
+    this.setState({ name: e.currentTarget.value, id: nanoid() });
   };
 
   handelNumberChange = e => {
@@ -63,8 +67,5 @@ export class Form extends React.Component {
     );
   }
 }
-Form.propTypes = {
-  onSubmit: PropTypes.func,
-};
 
 export default Form;

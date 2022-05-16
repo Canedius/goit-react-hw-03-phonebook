@@ -50,9 +50,11 @@ componentDidUpdate(prevProps,prevState){
       <h2>Phonebook</h2>
       <Form onSubmit={this.submitHandler} />
       <h2>Contacts</h2>
-      <ContactList contacts={visibleContacts} deleteContacts={this.deleteContacts}>
       <Filter value={this.state.filter} onChange ={this.chengeFilter}/>
-      </ContactList>
+      <ContactList contacts={visibleContacts} deleteContacts={this.deleteContacts}/>
+      
+      
+      
     </div>)
     
   }
